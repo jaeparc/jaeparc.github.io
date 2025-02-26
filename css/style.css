@@ -203,7 +203,7 @@ nav a.white-text:hover {
     position: relative;
     aspect-ratio: 1/1; /* Carré parfait */
     overflow: hidden;
-    border: 3px solid transparent; /* Bordure invisible par défaut */
+    border: 3px solid #fe933b; /* Bordure invisible par défaut */
     transition: border 0.3s ease-in-out;
 }
 
