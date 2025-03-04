@@ -248,3 +248,68 @@ nav a.white-text:hover {
 .page-footer {
     background: linear-gradient(45deg, #e76f51, #f4a261, #e9c46a);
 }
+/* Carrousel principal */
+.mainSwiper {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.mainSwiper .swiper-slide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainSwiper .swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Carrousel des miniatures avec scroll */
+.thumbSwiper {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+.thumbSwiper .swiper-wrapper {
+  display: flex;
+}
+.thumbSwiper .swiper-slide {
+  width: 30%; /* Taille des miniatures */
+  flex-shrink: 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thumbSwiper .swiper-slide img {
+  width: 100%;
+
+  object-fit: cover;
+}
+.thumbSwiper .swiper-slide-thumb-active {
+    opacity: 1;
+  outline: 2px solid white;
+  outline-offset: -2px; /* Garde l'effet sans bouger la miniature */
+}
+/* Effet drag */
+.thumbSwiper .swiper-wrapper.active {
+  cursor: grabbing;
+}
+
+/* Flèche suivante */
+.swiper-button-next {
+    color: #ff5733; /* Change cette couleur pour celle que tu veux */
+  }
+  
+  /* Flèche précédente */
+  .swiper-button-prev {
+    color: #ff5733; /* Idem ici */
+  }
+  
+  /* (Optionnel) : Ajouter un effet au survol */
+  .swiper-button-next:hover, .swiper-button-prev:hover {
+    color: #ff0000; /* Change la couleur au survol */
+  }
+  
