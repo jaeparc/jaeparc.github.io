@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div interactive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .side {
+            flex: 1;
+            transition: flex 0.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+        .left {
+            background-color: #3498db;
+        }
+        .right {
+            background-color: #e74c3c;
+        }
+        .left.active {
+            flex: 2;
+        }
+        .right.active {
+            flex: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="side left active">Gauche</div>
+        <div class="side right">Droite</div>
+    </div>
+    <script>
+        let lastHovered = document.querySelector('.left'); // Par défaut, la gauche est dominante
+
+        document.querySelectorAll('.side').forEach(side => {
+            side.addEventListener('mouseenter', () => {
+                lastHovered.classList.remove('active');
+                side.classList.add('active');
+                lastHovered = side;
+            });
+        });
+    </script>
+</body>
+</html>
